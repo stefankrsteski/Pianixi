@@ -22,9 +22,11 @@ body {
   0% {
     background-position: 50% 0%;
   }
+
   50% {
     background-position: 50% 100%;
   }
+
   100% {
     background-position: 50% 0%;
   }
@@ -124,41 +126,37 @@ p {
   overflow: hidden;
   z-index: -1;
 }
+
 .floating-logo {
   position: absolute;
   width: 60px;
-  height: auto; /* maintain aspect ratio */
+  height: auto;
   opacity: 0;
-  animation: bounceFadeFaded 3s ease-in-out forwards;
+  animation: fallFade 6s linear forwards;  /* <-- slower */
 }
 
-@keyframes bounceFadeFaded {
+@keyframes fallFade {
   0% {
-    transform: scale(0.5);
+    transform: translateY(-60px);
     opacity: 0;
   }
-  10% {
-    transform: scale(1.1);
-    opacity: 0.3; /* faded in, but subtle */
-  }
   20% {
-    transform: scale(1);
-    opacity: 0.25;
+    opacity: 0.3;
   }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.2;
-  }
-  70% {
-    transform: scale(1);
-    opacity: 0.15;
-  }
-  90% {
-    transform: scale(1.1);
+  40% {
     opacity: 0.1;
   }
+  60% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.3;
+  }
   100% {
-    transform: scale(0.5);
+    transform: translateY(100vh);
     opacity: 0;
   }
 }

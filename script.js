@@ -5,23 +5,28 @@ function spawnLogo() {
   logo.src = 'logo.webp';
   logo.className = 'floating-logo';
 
-  // Random position
+  // Spawn at random X (horizontal) position at the top of the screen
   const maxX = window.innerWidth - 60;
-  const maxY = window.innerHeight - 60;
   const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
 
   logo.style.left = `${x}px`;
-  logo.style.top = `${y}px`;
-
-  // Optional: random size or rotation
-  // logo.style.transform = `rotate(${Math.random() * 360}deg)`;
+  logo.style.top = `-60px`; // start just above viewport
 
   background.appendChild(logo);
 
   setTimeout(() => {
     background.removeChild(logo);
-  }, 3000); // match animation duration
+  }, 6000); // match animation duration
 }
 
-setInterval(spawnLogo, 1000); // one every second
+function spawnLogoRandomInterval() {
+  spawnLogo();
+
+  // Random delay between 1s and 4s (adjust as you like)
+  const randomDelay = 1000 + Math.random() * 3000;
+
+  setTimeout(spawnLogoRandomInterval, randomDelay);
+}
+
+// Start the random interval spawning
+spawnLogoRandomInterval();
