@@ -10,7 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, #dce6ff, #fff, #dce6ff);
   background-size: 100% 300%; /* make gradient taller than viewport */
-  animation: gradientMove 10s ease-in-out infinite;
+  animation: gradientMove 30s ease-in-out infinite;
   color: #1a1a1a;
   min-height: 100vh;
   display: flex;
